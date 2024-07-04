@@ -1,0 +1,192 @@
+<!-- 使用クラス表 -->
+<!-- 
+    title
+    side
+    main
+    instruction
+    calculationList
+    remarks
+    nav_list
+    nav_item
+    form
+    formTable
+    submit
+    item
+    output
+    output-table
+    
+
+    面積 area
+    容積率 volume
+    坪単価 price
+    固定資産税路線価 realTax
+    延べ床面積 floor
+    使用用途 purpose
+    住宅用地 housing
+    その他 others
+    住戸数 house
+    構造 structure
+    木造 wood
+    非木造 unwood
+    築年数 year
+    相続税路線価 inheritanceTax
+    相続人数 heir
+    利用区分 category
+    居住用宅地 residential
+    特定事業用宅地 buisiness
+    貸付事業用地 loanBusiness
+    その他 other
+    家賃 rent
+    自己資金 fund
+    借入年数 debtYear
+    金利 rate
+
+    総工費 cost
+    固定資産税評価額(土地) realValue
+    年間固都税(土地) realPay
+    固定資産税評価額(建物) builValue
+    年間固都税(建物) builPay
+    合計固都税 taxPay
+    相続税評価額 inheritanceValue
+    課税遺産総額 inheritanceTaxable
+    手残り leftovers
+    実質利回り yield
+    総収入 income
+    初年度返済額 repayment
+    初年度固都税額 tax
+
+    総工費関数 calculateCost
+    固定資産税計算(簡易) calTax
+    固定資産税計算　calculateTax
+    相続税計算(簡易) calInheritanceTax
+    相続税計算 calculateInheritanceTax
+    収益計算(簡易)　calProfit
+    収益計算 calculateProfit
+
+    ハンバーガーメニュー　html
+    <header class="header">
+         ヘッダーロゴ 
+        <div class="logo">相続税(簡易)</div>
+         ハンバーガーメニュー部分
+        <div class="nav">
+      
+          ハンバーガーメニューの表示・非表示を切り替えるチェックボックス 
+          <input id="drawer_input" class="drawer_hidden" type="checkbox">
+      
+          ハンバーガーアイコン
+          <label for="drawer_input" class="drawer_open"><span></span></label>
+      
+          メニュー
+          <nav class="nav_content">
+            <ul class="nav_list">
+              <li class="nav_item"><a href="home.html">ホーム</a></li>
+              <li class="nav_item"><a href="cost.html">建築費</a></li>
+              <li class="nav_item"><a href="simpl_real_estate_tax.html">固定資産税(簡易)</a></li>
+              <li class="nav_item"><a href="real_estate_tax.html">固定資産税</a></li>
+              <li class="nav_item"><a href="simple_inheritance_tax.html">相続税(簡易)</a></li>
+              <li class="nav_item"><a href="inheritance_tax.html">相続税</a></li>
+              <li class="nav_item"><a href="simpl_pay.html">収支シュミレーション(簡易)</a></li>
+              <li class="nav_item"><a href="pay.html">収支シュミレーション</a></li>
+            </ul>
+          </nav>    
+        </div>
+      </header>
+
+      /* ハンバーガーメニュー css*/
+  .header {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    padding: 0 20px;
+    background: aqua;
+  }
+  
+  .logo {
+    font-size: 24px;
+    margin: auto;
+  }
+  
+  /* ここから下がハンバーガーメニューに関するCSS */
+    
+  /* チェックボックスを非表示にする */
+  .drawer_hidden {
+    display: none;
+  }
+  
+  /* ハンバーガーアイコンの設置スペース */
+  .drawer_open {
+    display: flex;
+    height: 60px;
+    width: 60px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 100;/* 重なり順を一番上にする */
+    cursor: pointer;
+  }
+  
+  /* ハンバーガーメニューのアイコン */
+  .drawer_open span,
+  .drawer_open span:before,
+  .drawer_open span:after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 25px;
+    border-radius: 3px;
+    background: #333;
+    transition: 0.5s;
+    position: absolute;
+  }
+  
+  /* 三本線の一番上の棒の位置調整 */
+  .drawer_open span:before {
+    bottom: 8px;
+  }
+  
+  /* 三本線の一番下の棒の位置調整 */
+  .drawer_open span:after {
+    top: 8px;
+  }
+  
+  /* アイコンがクリックされたら真ん中の線を透明にする */
+  #drawer_input:checked ~ .drawer_open span {
+    background: rgba(255, 255, 255, 0);
+  }
+  
+  /* アイコンがクリックされたらアイコンが×印になように上下の線を回転 */
+  #drawer_input:checked ~ .drawer_open span::before {
+    bottom: 0;
+    transform: rotate(45deg);
+  }
+  
+  #drawer_input:checked ~ .drawer_open span::after {
+    top: 0;
+    transform: rotate(-45deg);
+  }
+    
+  /* メニューのデザイン*/
+  .nav_content {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 100%; /* メニューを画面の外に飛ばす */
+    z-index: 99;
+    background: #fff;
+    transition: .5s;
+  }
+  
+  /* メニュー黒ポチを消す */
+  .nav_list {
+    list-style: none;
+  }
+  
+  /* アイコンがクリックされたらメニューを表示 */
+  #drawer_input:checked ~ .nav_content {
+    left: 0;/* メニューを画面に入れる */
+  }
+
+
+ -->
