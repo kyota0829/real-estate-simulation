@@ -15,51 +15,38 @@
     <link rel="stylesheet" href="./assts/css/style.css">
 </head>
 <body>
-       
+
   <h1 class="title">不動産シミュレーション</h1>
   
-  <article>
-    <div class="main">
-      <h2 class="instruction">～相続税(簡易)～</h2>
-        <form action="#" id="form" class="form">
-          <table class="formTable">
-            <tr>
-              <th>
-                面積：
-              </th>
-              <td>
-                <input type="number" name="area" step="0.01" class="input">
-              </td>
-              <th>
-                ㎡
-              </th>
-            </tr>
-            <tr>
-              <th>
-                相続税路線価：
-              </th>
-              <td>
-                <input type="number" name="inheritanceTax" step="0.01" class="input">
-              </td>
-              <th>
-                万円
-              </th>
-            </tr>
-          </table>
-        </form>
-        <input type="submit" value="計算" class="submit" onclick="calInheritanceTax(event)">
+    <article>
+        <div class="main">
+          <h2 class="instruction">～容積率～</h2>
+<!-- form -->
+            <form action="#" id="form" class="form">
+                <table class="formTable">
+                    <tr>
+                        <th>
+                            住所：
+                        </th>
+                        <td>
+                            <input type="address" name="address" class="input">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+    <input type="submit" value="検索" class="submit" onclick="">
 
 <!-- output -->
-        <table class="outputTable">
-          <tr>
-            <th>
-              相続税評価額：
-            </th>
-            <td>
-              <p id="inheritanceValue" class="output"></p>
-            </td>
-          </tr>
-        </table>
+    <table class="outputTable">
+        <tr>
+          <th>
+            容積率：
+          </th>
+          <td>
+            <p id="volume" class="output"></p>
+          </td>
+        </tr>
+      </table>
     </div>
 <!-- サイドメニュー -->
     <div class="side">
@@ -77,13 +64,12 @@
       </ul>
     </div>
   </article>
-  
+
   <h3 class="remarks">
     注意事項
     <p>このサイトの計算結果はあくまで参考にしてください。</p>
   </h3>
 
-<script src="./assts/js/app.js"></script>
-
+    <script src="./assts/js/app.js"></script>
 </body>
 </html>

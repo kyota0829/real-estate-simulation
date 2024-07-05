@@ -154,9 +154,11 @@ function calProfit(event) {
     event.preventDefault();
     const rent = document.getElementById("form").rent.value;
     const repayment = cost*0.003;
-    const leftovers = ((rent*area*volume/10000) - repayment) * 12;
+    const leftoversMonth = ((rent*area*volume/10000) - repayment);
+    const leftovers = leftoversMonth * 12;
     const yield = leftovers/cost*100
     document.getElementById("leftovers").textContent = `${point(leftovers, 0)}万円`;
+    document.getElementById("leftoversMonth").textContent = `${point(leftoversMonth, 0)}万円`;
     document.getElementById("yield").textContent = `${point(yield, 2)}%`;
 };
 
@@ -206,11 +208,13 @@ function calculateProfit(event) {
     const taxPay =realPay + builPay;
 
     const leftover = income - repayment - taxPay;
+    const leftoversMonth = (income - repayment - taxPay) / 12 ;
     const yield = (leftover/cost)*100;
 
     document.getElementById("income").textContent = `${point(income, 0)}万円`;
     document.getElementById("repayment").textContent = `${point(repayment, 0)}万円`;
     document.getElementById("taxPay").textContent = `${point(taxPay, 0)}万円`;
     document.getElementById("leftovers").textContent = `${point(leftover, 0)}万円`;
+    document.getElementById("leftoversMonth").textContent = `${point(leftoversMonth, 1)}万円`;
     document.getElementById("yield").textContent = `${point(yield, 3)}%`;
 };
