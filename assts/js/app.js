@@ -1,5 +1,5 @@
 //変数宣言
-let area, volume, price, cost;
+let area, volume, price, cost, unVolume, allCost;
 
 // 四捨五入　関数
 function point(num, digit) {
@@ -12,9 +12,12 @@ function calculateCost(event) {
     event.preventDefault();
     area = document.getElementById("form").area.value;
     volume = document.getElementById("form").volume.value/100; //%を倍数に変換
+    unVolume = document.getElementById("unVolume").value;
     price = document.getElementById("form").price.value;
-    cost = (area*0.3025*volume*price*1.5*1.15)+2000
+    cost = area*0.3025*volume*price*unVolume;
+    allCost = cost*1.15 + 2000;
     document.getElementById("cost").textContent = `${point(cost, 0)}万円`;
+    document.getElementById("allCost").textContent = `${point(allCost, 0)}万円`;
 };
 
 //　税金計算(簡易)　関数
@@ -153,10 +156,10 @@ function calculateInheritanceTax(event) {
 function calProfit(event) {
     event.preventDefault();
     const rent = document.getElementById("form").rent.value;
-    const repayment = cost*0.003;
+    const repayment = allCost*0.003;
     const leftoversMonth = ((rent*area*volume/10000) - repayment);
     const leftovers = leftoversMonth * 12;
-    const yield = leftovers/cost*100
+    const yield = leftovers/allCost*100
     document.getElementById("leftovers").textContent = `${point(leftovers, 0)}万円`;
     document.getElementById("leftoversMonth").textContent = `${point(leftoversMonth, 0)}万円`;
     document.getElementById("yield").textContent = `${point(yield, 2)}%`;
@@ -167,7 +170,7 @@ function calculateProfit(event) {
     event.preventDefault();
     const rent = document.getElementById("form").rent.value;
     const fund = document.getElementById("form").fund.value;
-    const debt = cost - fund;
+    const debt = allCost - fund;
     const monthRate = document.getElementById("form").rate.value/1200;
     const debtMonth = document.getElementById("form").debtYear.value*12;
     const income = area*volume*rent/10000*12;
@@ -194,7 +197,7 @@ function calculateProfit(event) {
     const realPay = propertyValue*0.014 + propertyCityValue*0.003;
     //建物の税金計算
     const structure = document.getElementById("structure").value;
-    let builValuation = (cost/1.15)-2000;
+    let builValuation = (allCost/1.15)-2000;
     const rate = {
       wood: [0.8, 0.75, 0.7, 0.67, 0.64, 0.62, 0.59, 0.56, 0.53, 0.5, 0.48, 0.45, 0.42, 0.39, 0.37, 0.34, 0.32, 0.3, 0.28, 0.25, 0.24, 0.24, 0.23, 0.22, 0.21, 0.21, 0.2],
       unWood: [0.9579, 0.9309, 0.9038, 0.8803, 0.8569, 0.8335, 0.8100, 0.7866, 0.7632, 0.7397, 0.7163, 0.6929, 0.6695, 0.6460, 0.6225, 0.5992, 0.5757, 0.5523, 0.5288, 0.5054, 0.4820, 0.4585, 0.4388, 0.4189, 0.3992, 0.3794, 0.3596, 0.3398, 0.3228, 0.3059, 0.2916, 0.2774, 0.2631, 0.2488, 0.2345, 0.2294, 0.2243, 0.2191, 0.2140, 0.2089, 0.2071, 0.2053, 0.2036, 0.2018, 0.2000]
@@ -209,12 +212,12 @@ function calculateProfit(event) {
 
     const leftover = income - repayment - taxPay;
     const leftoversMonth = (income - repayment - taxPay) / 12 ;
-    const yield = (leftover/cost)*100;
+    const yield = (leftover/allCost)*100;
 
     document.getElementById("income").textContent = `${point(income, 0)}万円`;
     document.getElementById("repayment").textContent = `${point(repayment, 0)}万円`;
     document.getElementById("taxPay").textContent = `${point(taxPay, 0)}万円`;
     document.getElementById("leftovers").textContent = `${point(leftover, 0)}万円`;
     document.getElementById("leftoversMonth").textContent = `${point(leftoversMonth, 1)}万円`;
-    document.getElementById("yield").textContent = `${point(yield, 3)}%`;
+    document.getElementById("yield").textContent = `${point(yield, 2)}%`;
 };

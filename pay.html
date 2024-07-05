@@ -47,6 +47,25 @@
           </th>
         </tr>
         <tr>
+          <th>容積対象外の倍率：</th>
+          <th>
+            <select name="unVolume" id="unVolume">
+              <option value="1.0">1.0</option>
+              <option value="1.1">1.1</option>
+              <option value="1.2">1.2</option>
+              <option value="1.3">1.3</option>
+              <option value="1.4">1.4</option>
+              <option value="1.5" selected>1.5</option>
+              <option value="1.6">1.6</option>
+              <option value="1.7">1.7</option>
+              <option value="1.8">1.8</option>
+              <option value="1.9">1.9</option>
+              <option value="2.0">2.0</option>
+            </select>
+          </th>
+          <th>倍</th>
+        </tr>
+        <tr>
           <th>
               固定資産税路線価：
           </th>
@@ -129,10 +148,18 @@
     <table class="outputTable">
       <tr>
         <th>
+          建築費：
+        </th>
+        <td>
+          <p id="cost" class="output"></p>
+        </td>
+      </tr>
+      <tr>
+        <th>
             総工費：
         </th>
         <td>
-            <p id="cost" class="output"></p>
+            <p id="allCost" class="output"></p>
         </td>
       </tr>
       <tr>
@@ -190,7 +217,6 @@
     <h3 class="menu">メニュー</h3>
     <ul class="nav_list">
       <li class="nav_item"><a href="index.html">ホーム</a></li>
-      <li class="nav_item"><a href="volume.html">容積率</a></li>
       <li class="nav_item"><a href="cost.html">建築費</a></li>
       <li class="nav_item"><a href="simpl_real_estate_tax.html">固定資産税(簡易)</a></li>
       <li class="nav_item"><a href="real_estate_tax.html">固定資産税</a></li>
@@ -204,7 +230,9 @@
 
 <h3 class="remarks">
   注意事項
-  <p>総工費は坪数 × 容積率 × 坪単価 × 1.5(容積対象外の建築坪数想定) × 1.15(諸経費) + 2000万円(解体費)で算出しています。</p>
+  <p>建築費の計算は 坪数 × 容積率 × 坪単価 × 容積対象外の倍率 で算出しています。</p>
+  <p>総工費は 建築費 × 1.15(諸経費) + 2000万円(解体費) で算出しています。</p>
+  <p>容積対象外の倍率とは廊下やバルコニー等の割合です。</p>
   <p>固定資産税率1.4% 都市計画税率0.3%で算出しています。</p>
   <p>経年減価補正率は新築時の補正率で算出しています。</p>
   <p>小規模住宅用地の特例は30㎡あたり1戸と想定して算出しています。</p>
