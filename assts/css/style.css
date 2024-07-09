@@ -158,6 +158,7 @@ article {
 /* output */
 .outputTable {
   font-size: 18px;
+  font-weight: bold;
   margin: 0 auto;
   color: #f98fab;
   text-align: right;

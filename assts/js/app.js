@@ -16,8 +16,8 @@ function calculateCost(event) {
     price = document.getElementById("form").price.value;
     cost = area*0.3025*volume*price*unVolume;
     allCost = cost*1.15 + 2000;
-    document.getElementById("cost").textContent = `${point(cost, 0)}万円`;
-    document.getElementById("allCost").textContent = `${point(allCost, 0)}万円`;
+    document.getElementById("cost").textContent = `建築費：${point(cost, 0)}万円`;
+    document.getElementById("allCost").textContent = `総工費：${point(allCost, 0)}万円`;
 };
 
 //　税金計算(簡易)　関数
@@ -33,11 +33,11 @@ function calTax(event) {
     const builPay = builValue*0.017;
     const taxPay = realPay+builPay;
 
-    document.getElementById("realValue").textContent = `${point(realValue, 0)}万円`;
-    document.getElementById("realPay").textContent = `${point(realPay, 0)}万円`;
-    document.getElementById("builValue").textContent = `${point(builValue, 0)}万円`;
-    document.getElementById("builPay").textContent = `${point(builPay, 0)}万円`;
-    document.getElementById("taxPay").textContent = `${point(taxPay, 0)}万円`;
+    document.getElementById("realValue").textContent = `固定資産税評価額(土地)：${point(realValue, 0)}万円`;
+    document.getElementById("realPay").textContent = `年間固都税支払い額(土地)：${point(realPay, 0)}万円`;
+    document.getElementById("builValue").textContent = `固定資産税評価額(建物)：${point(builValue, 0)}万円`;
+    document.getElementById("builPay").textContent = `年間固都税支払い額(建物)：${point(builPay, 0)}万円`;
+    document.getElementById("taxPay").textContent = `合計固都税支払い額：${point(taxPay, 0)}万円`;
 }
 
 //　税金計算　関数
@@ -74,8 +74,8 @@ function calculateTax(event) {
 
         realPay = propertyValue*0.014 + propertyCityValue*0.003
 
-        document.getElementById("realValue").textContent = `${point(propertyValue, 0)}万円`;
-        document.getElementById("realPay").textContent = `${point(realPay, 0)}万円`;
+        document.getElementById("realValue").textContent = `固定資産税評価額(土地)：${point(propertyValue, 0)}万円`;
+        document.getElementById("realPay").textContent = `年間固都税支払い額(土地)：${point(realPay, 0)}万円`;
         }
         //建物の税金計算
         if (floor && price) {
@@ -91,12 +91,12 @@ function calculateTax(event) {
 
             builPay = builValue*0.017
 
-          document.getElementById("builValue").textContent = `${point(builValue, 0)}万円`;
-          document.getElementById("builPay").textContent = `${point(builPay, 0)}万円`;
+          document.getElementById("builValue").textContent = `固定資産税評価額(建物)：${point(builValue, 0)}万円`;
+          document.getElementById("builPay").textContent = `年間固都税支払い額(建物)：${point(builPay, 0)}万円`;
         }
         //合計値の計算
         const taxPay = realPay + builPay
-        document.getElementById("taxPay").textContent = `${point(taxPay, 0)}万円`;
+        document.getElementById("taxPay").textContent = `合計固都税支払い額：${point(taxPay, 0)}万円`;
 };
 
 //相続税計算(簡易)　関数
@@ -105,7 +105,7 @@ function calInheritanceTax(event) {
     const area = document.getElementById("form").area.value;
     const inheritanceTax = document.getElementById("form").inheritanceTax.value;
     const inheritanceValue = area*inheritanceTax;
-    document.getElementById("inheritanceValue").textContent = `${point(inheritanceValue, 0)}万円`;
+    document.getElementById("inheritanceValue").textContent = `相続税評価額：${point(inheritanceValue, 0)}万円`;
 };
 
 // 相続税計算　関数
@@ -143,12 +143,12 @@ function calculateInheritanceTax(event) {
     const inheritanceTaxable = inheritanceValue - (3000+600*heir);
 
     if (inheritanceTaxable > 0) {
-        document.getElementById("inheritanceTaxable").textContent = `${point(inheritanceTaxable, 0)}万円`;
+        document.getElementById("inheritanceTaxable").textContent = `課税遺産総額：${point(inheritanceTaxable, 0)}万円`;
     } else {
-        document.getElementById("inheritanceTaxable").textContent = "0万円";
+        document.getElementById("inheritanceTaxable").textContent = "課税遺産総額：0万円";
     };
 
-    document.getElementById("inheritanceValue").textContent = `${point(inheritanceValue, 0)}万円`;
+    document.getElementById("inheritanceValue").textContent = `相続税評価額：${point(inheritanceValue, 0)}万円`;
 
 };
 
@@ -160,9 +160,9 @@ function calProfit(event) {
     const leftoversMonth = ((rent*area*volume/10000) - repayment);
     const leftovers = leftoversMonth * 12;
     const yield = leftovers/allCost*100
-    document.getElementById("leftovers").textContent = `${point(leftovers, 0)}万円`;
-    document.getElementById("leftoversMonth").textContent = `${point(leftoversMonth, 0)}万円`;
-    document.getElementById("yield").textContent = `${point(yield, 2)}%`;
+    document.getElementById("leftovers").textContent = `手残り(年)：${point(leftovers, 0)}万円`;
+    document.getElementById("leftoversMonth").textContent = `手残り(月)：${point(leftoversMonth, 0)}万円`;
+    document.getElementById("yield").textContent = `実質利回り：${point(yield, 2)}%`;
 };
 
 //収益計算　関数
@@ -214,10 +214,10 @@ function calculateProfit(event) {
     const leftoversMonth = (income - repayment - taxPay) / 12 ;
     const yield = (leftover/allCost)*100;
 
-    document.getElementById("income").textContent = `${point(income, 0)}万円`;
-    document.getElementById("repayment").textContent = `${point(repayment, 0)}万円`;
-    document.getElementById("taxPay").textContent = `${point(taxPay, 0)}万円`;
-    document.getElementById("leftovers").textContent = `${point(leftover, 0)}万円`;
-    document.getElementById("leftoversMonth").textContent = `${point(leftoversMonth, 1)}万円`;
-    document.getElementById("yield").textContent = `${point(yield, 2)}%`;
+    document.getElementById("income").textContent = `総収入：${point(income, 0)}万円`;
+    document.getElementById("repayment").textContent = `初年度返済額：${point(repayment, 0)}万円`;
+    document.getElementById("taxPay").textContent = `初年度固都税合計額：${point(taxPay, 0)}万円`;
+    document.getElementById("leftovers").textContent = `手残り(年)：${point(leftover, 0)}万円`;
+    document.getElementById("leftoversMonth").textContent = `手残り(月)：${point(leftoversMonth, 1)}万円`;
+    document.getElementById("yield").textContent = `実質利回り：${point(yield, 2)}%`;
 };
