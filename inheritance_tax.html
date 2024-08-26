@@ -26,37 +26,31 @@
       <form action="#" id="form" class="form">
         <table class="formTable">
           <tr>
-            <th>
-                面積：
-            </th>
+            <th>面積</th>
             <td>
-              <input type="number" name="area" step="0.01" class="input">
+              <div class="input-group">
+                <input type="number" name="area" step="0.01" class="input">
+                <span class="unit">㎡</span>
+              </div>
             </td>
-            <th>
-                ㎡
-            </th>
           </tr>
           <tr>
-            <th>
-                相続税路線価：
-            </th>
+            <th>相続税路線価</th>
             <td>
+              <div class="input-group">
                 <input type="number" name="inheritanceTax" step="0.01" class="input">
+                <span class="unit">万円</span>
+              </div>
             </td>
-            <th>
-                万円
-            </th>
           </tr>
           <tr>
-            <th>
-                相続人数：
-            </th>
+            <th>相続人数</th>
             <td>
+              <div class="input-group">
                 <input type="number" name="heir" class="input">
+                <span class="unit">人</span>
+              </div>
             </td>
-            <th>
-                人
-            </th>
           </tr>
           <tr>
             <th>
@@ -99,6 +93,7 @@
           <li class="nav_item"><a href="inheritance_tax.html">相続税</a></li>
           <li class="nav_item"><a href="simpl_pay.html">収支シミュレーション(簡易)</a></li>
           <li class="nav_item"><a href="pay.html">収支シミュレーション</a></li>
+          <li class="nav_item"><a href="real_estate_price.html">売買相場</a></li>
         </ul>
       </div>
     </article>

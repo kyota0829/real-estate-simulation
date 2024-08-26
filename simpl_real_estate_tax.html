@@ -22,53 +22,46 @@
   <article>
     <div class="main">
       <h2 class="instruction">～固定資産税(簡易)～</h2>
+      <!-- form -->
         <form action="#" id="form" class="form">
           <table class="formTable">
             <th class="item">土地</th>
             <tr>
-              <th>
-                面積：
-              </th>
+              <th>面積</th>
               <td>
-                <input type="number" name="area" step="0.01" class="input">
+                <div class="input-group">
+                  <input type="number" name="area" step="0.01" class="input">
+                  <span class="unit">㎡</span>
+                </div>
               </td>
-              <th>
-                ㎡
-              </th>
             </tr>
             <tr>
-              <th>
-                固定資産税路線価：
-              </th>
+              <th>固定資産税路線価</th>
               <td>
-                <input type="number" name="realTax" step="0.01" class="input">
+                <div class="input-group">
+                  <input type="number" name="realTax" step="0.01" class="input">
+                  <span class="unit">万円</span>
+                </div>
               </td>
-              <th>
-                万円
-              </th>
             </tr>
             <th class="item">建物</th>
             <tr>
-              <th>
-                延べ床面積：
-              </th>
+              <th>延べ床面積</th>
               <td>
-                <input type="number" name="floor" step="0.01" class="input">
+                <div class="input-group">
+                  <input type="number" name="floor" step="0.01" class="input">
+                  <span class="unit">㎡</span>
+                </div>
               </td>
-              <th>
-                ㎡
-              </th>
             </tr>
             <tr>
-              <th>
-                建築費(坪単価)：
-              </th>
+              <th>建築費(坪単価)</th>
               <td>
-                <input type="number" name="price" class="input">
+                <div class="input-group">
+                  <input type="number" name="price" class="input">
+                  <span class="unit">万円</span>
+                </div>
               </td>
-              <th>
-                万円
-              </th>
             </tr>
           </table>
         </form>
@@ -116,6 +109,7 @@
         <li class="nav_item"><a href="inheritance_tax.html">相続税</a></li>
         <li class="nav_item"><a href="simpl_pay.html">収支シミュレーション(簡易)</a></li>
         <li class="nav_item"><a href="pay.html">収支シミュレーション</a></li>
+        <li class="nav_item"><a href="real_estate_price.html">売買相場</a></li>
       </ul>
     </div>
   </article>

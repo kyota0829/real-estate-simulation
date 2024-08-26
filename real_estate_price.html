@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="width=device-width" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>不動産シミュレーション</title>
+    <mate name="description" content="建築提案をする際に必要な情報を計算します">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./assts/css/sanitize.css">
+    <link rel="stylesheet" href="./assts/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+<body>
+    
+    <h1 class="title">不動産シミュレーション</h1>
+
+    <article>
+        <div class="main">
+          <h2 class="instruction">～売買相場～</h2>
+          
+          <!-- form -->
+          <form action="#" id="form" class="form">
+            <table class="formTable">
+                <tr>
+                    <th>都道府県</th>
+                    <td>
+                        <select name="prefectures" id="prefectures">
+                            <option value="">都道府県を選択してください</option>
+                            <option value="11">埼玉県</option>
+                            <option value="12">千葉県</option>
+                            <option value="13">東京都</option>
+                            <option value="14">神奈川県</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>市区町村</th>
+                    <td>
+                        <select name="city" id="city">
+                            <option value="">まずは都道府県を選択してください</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>計測する期間</th>
+                    <div class="input-group">
+                    <td>
+                        <select name="startYear" id="startYear">
+                            <option value="startYear">開始年を選択</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select name="endYear" id="endYear">
+                            <option value="endYear">終了年を選択</option>
+                        </select>
+                    </td>
+                    </div>
+                </tr>
+                <tr>
+                    <th>計測条件</th>
+                    <td>
+                        <select name="filter" id="filter">
+                            <option value="">計測条件を選択してください</option>
+                            <option value="all">全てのデータで計測</option>
+                            <option value="commercial">商業地域のみで計測</option>
+                            <option value="uncommercial">商業地域以外のみで計測</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>成約価格のみで計測したい場合はチェックを入れてください</th>
+                    <td><input type="checkbox" id="priceClassification"></td>
+                </tr>
+            </table>
+          </form>
+          <input type="submit" value="計測" class="submit" id="measurement">
+
+          <!-- output -->
+        <table class="outputTable">
+            <tr>
+              <td>
+                <p id="averageTradePrice" class="output"></p>
+              </td>
+            </tr>
+          </table>
+      </div>
+          
+          <!-- サイドメニュー -->
+    <div class="side">
+        <h3 class="menu">メニュー</h3>
+        <ul class="nav_list">
+          <li class="nav_item"><a href="index.html">ホーム</a></li>
+          <li class="nav_item"><a href="cost.html">建築費</a></li>
+          <li class="nav_item"><a href="simpl_real_estate_tax.html">固定資産税(簡易)</a></li>
+          <li class="nav_item"><a href="real_estate_tax.html">固定資産税</a></li>
+          <li class="nav_item"><a href="simple_inheritance_tax.html">相続税(簡易)</a></li>
+          <li class="nav_item"><a href="inheritance_tax.html">相続税</a></li>
+          <li class="nav_item"><a href="simpl_pay.html">収支シミュレーション(簡易)</a></li>
+          <li class="nav_item"><a href="pay.html">収支シミュレーション</a></li>
+          <li class="nav_item"><a href="real_estate_price.html">売買相場</a></li>
+        </ul>
+      </div>
+    </article>
+  
+    <h3 class="remarks">
+      注意事項
+      <p>2005年は下半期のデータのみしかありません。</p>
+      <p>このデータは不動産情報ライブラリのデータをもとに作成しております。</p>
+      <p>出典：国土交通省　不動産情報ライブラリ</p>
+      <p><a href="https://www.reinfolib.mlit.go.jp/">https://www.reinfolib.mlit.go.jp/</a></p>
+    </h3>
+  
+  <script src="./assts/js/app.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</body>
+</html>

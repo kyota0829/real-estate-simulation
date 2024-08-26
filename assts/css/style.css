@@ -155,6 +155,69 @@ article {
   padding: 5px 60px;
 }
 
+@media screen and (max-width: 768px) {
+  .form {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+  }
+
+  .formTable {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+  }
+
+  .formTable tr {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      margin-bottom: 10px;
+  }
+
+  .formTable th,
+  .formTable td {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 5px;
+  }
+
+  .formTable th {
+      text-align: left;
+      margin-bottom: 5px;
+      font-weight: bold;
+  }
+
+  .input-group {
+      display: flex;
+      align-items: center;
+      width: 100%;
+  }
+
+  .input-group input[type="text"] {
+      flex: 1;
+      padding: 5px;
+      margin-right: 5px;
+  }
+
+  .input-group .unit {
+      white-space: nowrap;
+  }
+
+  .formTable th, .formTable td {
+      flex-direction: row; /* テキストと入力フィールドを横並びに */
+      justify-content: space-between;
+  }
+
+  .submit {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+  }
+}
+
 /* output */
 .outputTable {
   font-size: 18px;
