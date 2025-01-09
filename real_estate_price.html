@@ -22,59 +22,73 @@
     <article>
         <div class="main">
           <h2 class="instruction">～売買相場～</h2>
-          
           <!-- form -->
           <form action="#" id="form" class="form">
             <table class="formTable">
                 <tr>
                     <th>都道府県</th>
                     <td>
-                        <select name="prefectures" id="prefectures">
-                            <option value="">都道府県を選択してください</option>
-                            <option value="11">埼玉県</option>
-                            <option value="12">千葉県</option>
-                            <option value="13">東京都</option>
-                            <option value="14">神奈川県</option>
-                        </select>
+                        <div class="input-group">
+                            <select name="prefectures" id="prefectures">
+                                <option value="">都道府県を選択してください</option>
+                                <option value="8">茨城県</option>
+                                <option value="9">栃木県</option>
+                                <option value="10">群馬県</option>
+                                <option value="11">埼玉県</option>
+                                <option value="12">千葉県</option>
+                                <option value="13">東京都</option>
+                                <option value="14">神奈川県</option>
+                            </select>
+                        </div>
                     </td>
                 </tr>
                 <tr>
                     <th>市区町村</th>
                     <td>
-                        <select name="city" id="city">
-                            <option value="">まずは都道府県を選択してください</option>
-                        </select>
+                        <div class="input-group">
+                            <select name="city" id="city">
+                                <option value="">まずは都道府県を選択してください</option>
+                            </select>
+                        </div>
                     </td>
                 </tr>
                 <tr>
                     <th>計測する期間</th>
-                    <div class="input-group">
                     <td>
-                        <select name="startYear" id="startYear">
-                            <option value="startYear">開始年を選択</option>
-                        </select>
+                        <div class="input-group">
+                            <select name="startYear" id="startYear">
+                                <option value="startYear">開始年を選択</option>
+                            </select>
+                        </div>
                     </td>
                     <td>
-                        <select name="endYear" id="endYear">
-                            <option value="endYear">終了年を選択</option>
-                        </select>
+                        <div class="input-group">
+                            <select name="endYear" id="endYear">
+                                <option value="endYear">終了年を選択</option>
+                            </select>
+                        </div>
                     </td>
-                    </div>
                 </tr>
                 <tr>
                     <th>計測条件</th>
                     <td>
-                        <select name="filter" id="filter">
-                            <option value="">計測条件を選択してください</option>
-                            <option value="all">全てのデータで計測</option>
-                            <option value="commercial">商業地域のみで計測</option>
-                            <option value="uncommercial">商業地域以外のみで計測</option>
-                        </select>
+                        <div class="input-group">
+                            <select name="filter" id="filter">
+                                <option value="">計測条件を選択してください</option>
+                                <option value="all">全てのデータで計測</option>
+                                <option value="commercial">商業地域のみで計測</option>
+                                <option value="uncommercial">商業地域以外のみで計測</option>
+                            </select>
+                        </div>
                     </td>
                 </tr>
                 <tr>
-                    <th>成約価格のみで計測したい場合はチェックを入れてください</th>
-                    <td><input type="checkbox" id="priceClassification"></td>
+                    <th>成約価格のみで計測したい場合は<br>チェックを入れてください</th>
+                    <td>
+                        <div class="input-group">
+                            <input type="checkbox" id="priceClassification">
+                        </div>
+                    </td>
                 </tr>
             </table>
           </form>
@@ -88,7 +102,7 @@
               </td>
             </tr>
           </table>
-      </div>
+        </div>
           
           <!-- サイドメニュー -->
     <div class="side">

@@ -8,7 +8,7 @@ const port = 3001;
 app.get('/api', async (req, res) => {
     const apiKey = '8418a1a54546427ca1bce1bd0c1f8d40'
     const { area, year, city, priceClassigication } = req.query;
-    let apiUrl = `https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001?area=${area}&year=${year}&city=${city}`;
+    let apiUrl = `https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001\?area=${area}&year=${year}&city=${city}`;
     if (priceClassigication) {
         apiUrl += '&priceClassigication=02';
     }
